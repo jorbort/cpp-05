@@ -11,21 +11,37 @@ class Bureaucrat
 	int grade;
 	public:
 
+		//constructors
 		Bureaucrat();
 		Bureaucrat(int grade, std::string const name );
 		Bureaucrat( Bureaucrat const & src );
+		Bureaucrat &operator=( Bureaucrat const & rhs );
+
+		//destructor
 		~Bureaucrat();
 
-		// Bureaucrat &		operator=( Bureaucrat const & rhs );
-		std::string &getName();
-		int getGrade();
-		std::exception &GradeTooHighException();
-		std::exception &GradeTooLowException();
+		//exceptions
+		class GradeTooHighException : public std::exception
+		{
+			public :
+			const char * what() const throw();
+		};
+		class GradeTooLowException : public std::exception
+		{
+			public:
+			const char *what() const throw();
+		};
+
+		//accsessor methods
+		void setName(std::string newname);
+		void setGrade(int grade);
+		std::string getName() const;
+		int getGrade() const;
 		void IncrementGrade();
 		void DecrementGrade();
 
 };
 
-std::ostream &			operator<<( std::ostream & o, Bureaucrat const & i );
+std::ostream &operator<<( std::ostream & o, Bureaucrat const & i );
 
-#endif /* ****************************************************** BUREAUCRAT_H */
+#endif
