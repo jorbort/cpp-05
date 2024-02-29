@@ -51,7 +51,7 @@ int main()
 	std::cout << "\nINTENTO FIRMAR UN FORMULARIO SIN EL LVL CORRECTO" << std::endl;
 	try
 	{
-		Bureaucrat	Marc = Bureaucrat("Marc", 150);
+		Bureaucrat	Marc = Bureaucrat(150, "Marc");
 		Form f5("F0005", 1, 10);
 		std::cout << f5 << std::endl;
 		Marc.signForm(f5);
@@ -66,7 +66,7 @@ int main()
 	std::cout << "\nINTENTO FIRMAR UN FORMULARIO CON EL LVL CORRECTO" << std::endl;
 	try
 	{
-		Bureaucrat	Marc = Bureaucrat("Marc", 1);
+		Bureaucrat	Marc = Bureaucrat(1, "Marc");
 		Form f6("F0006", 1, 1);
 		std::cout << f6 << std::endl;
 		Marc.signForm(f6);
@@ -81,7 +81,7 @@ int main()
 	std::cout << "\nINTENTO FIRMAR UN FORMULARIO DESDE EL PROPIO FORMULARIO SIN GRADO SUFICIENTE" << std::endl;
 	try
 	{
-		Bureaucrat	Marc = Bureaucrat("Marc", 150);
+		Bureaucrat	Marc = Bureaucrat(150, "Marc");
 		Form f8("F0005", 1, 10);
 		std::cout << f8 << std::endl;
 		f8.beSigned(Marc);
@@ -97,9 +97,9 @@ int main()
 	std::cout << "\nTEST GETTERS" << std::endl;
 	Form f7("F0007", 10, 101);
 	std::cout << "Formualrio name: " << f7.getName() << std::endl;
-	std::cout << "Execution Grade: " << f7.getEGrade() << std::endl;
-	std::cout << "Sigture Grade: " << f7.getSGrade() << std::endl;
-	std::cout << "Is signed: " << f7.getSign() << std::endl;
+	std::cout << "Execution Grade: " << f7.getExecGrade() << std::endl;
+	std::cout << "Sigture Grade: " << f7.getSignGrade() << std::endl;
+	std::cout << "Is signed: " << (f7.getSignature() ? " yes" : " no" )<< std::endl;
 
 
 	return(0);

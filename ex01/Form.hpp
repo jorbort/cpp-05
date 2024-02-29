@@ -5,6 +5,8 @@
 # include <string>
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form
 {
 	private:
@@ -35,8 +37,8 @@ class Form
 
 		const std::string getName() const;
 		bool getSignature() const;
-		const int getSignGrade() const;
-		const int getExecGrade() const;
+		int getSignGrade() const;
+		int getExecGrade() const;
 
 		void beSigned(Bureaucrat &bu);
 	

@@ -47,7 +47,7 @@ Form &				Form::operator=( Form const & rhs )
 
 std::ostream &			operator<<( std::ostream & o, Form const & i )
 {
-	o << i.getName() << "is signed = " << i.getSignature() << ", sign grade must be of at least " << i.getSignGrade() << ", and exec grade must be of at least " << i.getExecGrade() << std::endl ;
+	o << i.getName() << (i.getSignature() ? " is signed already " : " has not been signed yet " ) << ", sign grade must be of at least " << i.getSignGrade() << ", and exec grade must be of at least " << i.getExecGrade() << std::endl ;
 	return o;
 }
 
@@ -89,12 +89,12 @@ bool Form::getSignature() const
 	return (this->isSigned);
 }
 
-const int Form::getSignGrade() const
+int Form::getSignGrade() const
 {
 	return (this->signGrade);
 }
 
-const int Form::getExecGrade() const
+int Form::getExecGrade() const
 {
 	return (this->execGrade);
 }

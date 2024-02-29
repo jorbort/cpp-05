@@ -1,9 +1,9 @@
 NAME = Bureaucrat
 CFLAG = -Wall -Werror -Wextra -g -std=c++98 ##-fsanitize=address
-SRC = main.cpp Bureaucrat.cpp
+SRC = main.cpp Bureaucrat.cpp Form.cpp
 CC = c++
 OBJS = $(SRC:.cpp=.o)
-HEADER = Bureaucrat.hpp
+HEADER = Bureaucrat.hpp Form.hpp
 
 %.o: %.cpp
 	$(CC) -I. $(CFLAG) -c $< -o $@
