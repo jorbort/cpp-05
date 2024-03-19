@@ -50,7 +50,7 @@ void RobotomyRequestForm::_execute(const Bureaucrat & burocrata) const
 {
 	(void)burocrata;
 
-	std::cout << "Drill Noise...." << "Robotomy for " << this->getTarget() << "was a " << (std::rand() % 2 ? "success" : "failure") << std::endl;
+	std::cout << "Drill Noise...." << "Robotomy for " << this->getTarget() << " was a " << (std::rand() % 2 ? "success" : "failure") << std::endl;
 }
 
 /*

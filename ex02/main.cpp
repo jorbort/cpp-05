@@ -7,9 +7,9 @@
 int	main(void)
 {
 	AForm			*form = NULL;
-	Bureaucrat		bob("bob", 1);
-	Bureaucrat		phil("phil", 46);
-	Bureaucrat		luc("luc", 150);
+	Bureaucrat		bob(1, "bob");
+	Bureaucrat		phil(46 ,"phil");
+	Bureaucrat		luc( 150, "luc");
 
 	// std::cout << "TEST FORM IS NOW A ABSTRACT CLASS" << std::endl;
 	// form = new Form("28Z");
@@ -20,8 +20,8 @@ int	main(void)
 	try
 	{
 		form = new PresidentialPardonForm("28Z");
-		std::cout << "Siganture Gade: " << form->getSGrade() << std::endl;
-		std::cout << "Execution Gade: " << form->getEGrade() << std::endl;
+		std::cout << "Siganture Gade: " << form->getSignGrade() << std::endl;
+		std::cout << "Execution Gade: " << form->getExecGrade() << std::endl;
 		form->execute(bob);
 		delete form;
 		form = NULL;
@@ -71,8 +71,8 @@ int	main(void)
 	try
 	{
 		form = new RobotomyRequestForm("28Z");
-		std::cout << "Siganture Gade: " << form->getSGrade() << std::endl;
-		std::cout << "Execution Gade: " << form->getEGrade() << std::endl;
+		std::cout << "Siganture Gade: " << form->getSignGrade() << std::endl;
+		std::cout << "Execution Gade: " << form->getExecGrade() << std::endl;
 		form->execute(bob);
 		delete form;
 		form = NULL;
@@ -163,8 +163,8 @@ int	main(void)
 	try
 	{
 		form = new ShrubberyCreationForm("28Z");
-		std::cout << "Siganture Gade: " << form->getSGrade() << std::endl;
-		std::cout << "Execution Gade: " << form->getEGrade() << std::endl;
+		std::cout << "Siganture Gade: " << form->getSignGrade() << std::endl;
+		std::cout << "Execution Gade: " << form->getExecGrade() << std::endl;
 		form->execute(bob);
 		delete form;
 		form = NULL;
